@@ -18,12 +18,9 @@ class Landing extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
 
-    fetch("https://jsonplaceholder.typicode.com/todos/1")
+    fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
-      .then((json) => console.log(json));
-    fetch("http://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((data) => this.setState({ posts: data }));
+      .then((json) => this.setState({ posts: json }));
   }
   render() {
     return (
@@ -79,8 +76,8 @@ class Landing extends React.Component {
                               this.state.posts.map((element) => {
                                 return (
                                   <li
-                                    className="flex justify-between list-title"
-                                    style="flex=1"
+                                    className="list-title"
+                                    
                                   >
                                     {element.title}{" "}
                                     <div>
@@ -110,7 +107,7 @@ class Landing extends React.Component {
                                 );
                               })
                             ) : (
-                              <li>NAH ÇIKTI</li>
+                              <li style={{listStyleType:'none'}}>No post data</li>
                             )}
                           </ol>
                         </CardBody>

@@ -15885,7 +15885,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .color-swatch-header .pass-fail-item.small .example {
   font-size: 10px; }
 .list-title {
-  
+  justify-content: space-between; 
   font-family: "Open-Sans"; font-style: normal;font-weight: 300;
                                   font-size: 14px;
                                   line-height: 19px;
